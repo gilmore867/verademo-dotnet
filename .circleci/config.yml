@@ -32,7 +32,7 @@ jobs:
           key: dotnet-packages-v1-{{ checksum "VeraDemoNet.csproj" }}
       - run:
           name: "Run Build step"
-          command: msbuild /p:DeployOnBuild=true /p:WebPublishMethod=Package /p:PackageAsSingleFile=true /p:SkipInvalidConfigurations=true /p:DesktopBuildPackageLocation="$(build.artifactStagingDirectory)\WebApp.zip" /p:DebugSymbols=true /p:DeployIisAppPath="Default Web Site"
+          command: msbuild /p:DeployOnBuild=true /p:WebPublishMethod=Package /p:PackageAsSingleFile=true /p:SkipInvalidConfigurations=true /p:DebugSymbols=true
       - run:
           name: "Test the executable"
           command: .\bin\Release\netcoreapp2.1\win10-x64\publish\VeraDemoNet.dll
