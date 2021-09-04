@@ -35,7 +35,7 @@ jobs:
           name: "Run Build step"
           command: msbuild /p:DeployOnBuild=true /p:WebPublishMethod=Package /p:PackageAsSingleFile=true /p:SkipInvalidConfigurations=true /p:DebugSymbols=true
       - run:
-          name: "Test the executable"
-          command: .\bin\Release\netcoreapp2.1\win10-x64\publish\VeraDemoNet.dll
+          name: "Find Artifact for Publishing"
+          command: pwd; dir
       - store_artifacts:
           path: .\bin\Release\netcoreapp2.1\win10-x64\publish\VeraDemoNet.dll
