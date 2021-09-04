@@ -23,8 +23,8 @@ jobs:
           name: "Find the csproj file"
           command: pwd; dir 
       - run:
-          name: "Install project dependencies"
-          command: dotnet.exe restore; nuget restore
+          name: "Install project dependencies was dotnet.exe restore"
+          command: nuget restore
       - save_cache:
           paths:
             - C:\Users\circleci\project\
