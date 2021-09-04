@@ -12,7 +12,7 @@ jobs:
   build:
     executor:
       name: win/default
-    working_directory: $CIRCLE_WORKING_DIRECTORY 
+    working_directory: $CIRCLE_WORKING_DIRECTORY\verademo-dotnet\VeraDemoNet\
     steps:
       - checkout:
           path: working_directory
