@@ -17,6 +17,7 @@ jobs:
       - checkout:
           path: C:\Users\circleci\project
       - restore_cache:
+          paths: \VeraDemoNet
           keys:
             - dotnet-packages-v1-{{ checksum "VeraDemoNet.csproj" }}
       - run:
