@@ -12,6 +12,7 @@ jobs:
   build:
     executor:
       name: win/default
+      versio: edge
     working_directory: C:\Users\circleci\project\VeraDemoNet 
     steps:
       - checkout:
