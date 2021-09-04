@@ -24,7 +24,7 @@ jobs:
           command: dotnet.exe restore
       - save_cache:
           paths:
-            - \verademo-dotnet\.nuget\packages
+            - \project\verademo-dotnet\.nuget\packages
           key: dotnet-packages-v1-{{ checksum "VeraDemoNet.csproj" }}
       - run:
           name: "Run Build step"
