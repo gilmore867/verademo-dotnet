@@ -18,7 +18,7 @@ jobs:
           path: C:\Users\circleci\project\
       - restore_cache:
           keys:
-            - dotnet-packages-v1-{{ checksum "VeraDemoNet.csproj" }}
+            - dotnet-packages-v1-{{ checksum "C:\Users\circleci\project\verademo-dotnet\VeraDemoNet\VeraDemoNet.csproj" }}
       - run:
           name: "Find the csproj file"
           command: pwd; dir 
