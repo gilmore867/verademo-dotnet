@@ -7,10 +7,6 @@ workflows:
   Verademo-dotnet:
     jobs:
       - build
-  integration-tests:
-    jobs:
-      - browser-tests
-      - ui-tests
 
 jobs:
   build:
