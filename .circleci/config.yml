@@ -21,7 +21,7 @@ jobs:
             - dotnet-packages-v1-{{ checksum "VeraDemoNet.csproj" }}
       - run:
           name: "Find the csproj file"
-          command: dir /s
+          command: dir *.* /s
       - run:
           name: "Install project dependencies"
           command: dotnet.exe restore
