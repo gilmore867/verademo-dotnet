@@ -25,7 +25,7 @@ jobs:
           command: pwd; dir 
       - run:
           name: "Install project dependencies was dotnet.exe restore"
-          command: nuget restore
+          command: nuget.exe restore \VeraDemoNet.sln -Verbosity Detailed
       - save_cache:
           paths:
             - C:\Users\circleci\project\
