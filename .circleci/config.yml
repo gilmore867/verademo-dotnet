@@ -17,7 +17,7 @@ jobs:
       - checkout:
           path: C:\Users\circleci\project
       - restore_cache:
-          paths: \VeraDemoNet
+          paths: \VeraDemoNet\
           keys:
             - dotnet-packages-v1-{{ checksum "VeraDemoNet.csproj" }}
       - run:
@@ -27,8 +27,7 @@ jobs:
           name: "Install project dependencies"
           command: dotnet.exe restore
       - save_cache:
-          paths:
-            - \VeraDemoNet\
+          paths: \VeraDemoNet\
           key: dotnet-packages-v1-{{ checksum "VeraDemoNet.csproj" }}
       - run:
           name: "Run Build step"
