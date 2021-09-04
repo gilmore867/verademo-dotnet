@@ -12,10 +12,10 @@ jobs:
   build:
     executor:
       name: win/default
-    working_directory: $CIRCLE_WORKING_DIRECTORY 
+    working_directory: C:\Users\circleci\project 
     steps:
       - checkout:
-          path: C:\Users\circleci\project\
+          path: C:\Users\circleci\project
       - restore_cache:
           keys:
             - dotnet-packages-v1-{{ checksum "VeraDemoNet.csproj" }}
