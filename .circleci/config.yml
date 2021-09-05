@@ -50,4 +50,4 @@ jobs:
          command: C:\Users\circleci\project\VeracodeC#API.exe -help
       - run:
          name: "Veracode SCA Scan Agent"
-         command: Set-ExecutionPolicy AllSigned -Scope Process -Force; $ProgressPreference = "silentlyContinue"; iex ((New-Object System.Net.WebClient).DownloadString('https://download.srcclr.com/ci.ps1')); srcclr scan C:/Users/circleci/project/VeraDemoNet/obj/Debug/Package/VeraDemoNet.zip
+         command: Set-ExecutionPolicy AllSigned -Scope Process -Force; $ProgressPreference = "silentlyContinue"; iex ((New-Object System.Net.WebClient).DownloadString('https://download.srcclr.com/ci.ps1')); srcclr scan C:\Users\circleci\project\VeraDemoNet\obj\Debug\Package\VeraDemoNet.zip
