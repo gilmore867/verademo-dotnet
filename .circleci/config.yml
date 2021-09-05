@@ -35,8 +35,8 @@ jobs:
           name: "Run Build step"
           command: msbuild /p:DeployOnBuild=true /p:WebPublishMethod=Package /p:PackageAsSingleFile=true /p:SkipInvalidConfigurations=true /p:DebugSymbols=true
       - run:
-          name: "Find Artifact for Publishing"
-          command: pwd; dir C:/Users/circleci/project/VeraDemoNet/obj/Debug/Package
+          name: "Copy Artifact to Project Directory"
+          command: cp C:/Users/circleci/project/VeraDemoNet/obj/Debug/Package/VeraDemoNet.zip C:/Users/circleci/project/
       - store_artifacts:
           path: C:/Users/circleci/project/VeraDemoNet/obj/Debug/Package/VeraDemoNet.zip
       - run:
@@ -50,4 +50,4 @@ jobs:
          command: C:\Users\circleci\project\VeracodeC#API.exe -help
       - run:
          name: "Veracode SCA Scan Agent"
-         command: Set-ExecutionPolicy AllSigned -Scope Process -Force; $ProgressPreference = "silentlyContinue"; iex ((New-Object System.Net.WebClient).DownloadString('https://download.srcclr.com/ci.ps1')); srcclr scan C:\Users\circleci\project\VeraDemoNet\obj\Debug\Package\VeraDemoNet.zip
+         command: Set-ExecutionPolicy AllSigned -Scope Process -Force; $ProgressPreference = "silentlyContinue"; iex ((New-Object System.Net.WebClient).DownloadString('https://download.srcclr.com/ci.ps1')); srcclr scan C:\Users\circleci\project\VeraDemoNet.zip
