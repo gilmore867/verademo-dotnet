@@ -47,16 +47,16 @@ jobs:
     - name: Check out main branch
       uses: actions/checkout@v2
       with:
-        path: '${{ github.workspace }}/verademo-dotnet/artifact'
+        path: '${{ github.workspace }}/artifact'
     - name: List files in the repository
       run: |
-          ls -lharts ${{ github.workspace }}/verademo-dotnet/artifact
+          ls -lharts ${{ github.workspace }}/artifact
     - name: Veracode Upload And Scan
       uses: veracode/veracode-uploadandscan-action@0.2.6
       with:
           appname: '${{ secrets.VERACODE_APP_NAME }}'
           createprofile: false
-          filepath: '${{ github.workspace }}verademo-dotnet/artifact/VeraDemoNet.zip'
+          filepath: '${{ github.workspace }}/artifact/VeraDemoNet.zip'
           vid: '${{ secrets.VERACODE_API_ID }}'
           vkey: '${{ secrets.VERACODE_API_KEY }}'
           deleteincompletescan: 2
@@ -66,4 +66,3 @@ jobs:
 #          exclude: '*.js'
 #          include: '*.war'
 #          criticality: 'VeryHigh'
-     
