@@ -53,7 +53,7 @@ jobs:
     - name: Download Artifact from Previous Job
       uses: actions/download-artifact@v4
       with:
-        path: '${{ github.workspace }}/artifact/VeraDemoNet.zip'
+        path: '${{ github.workspace }}/artifact/'
     - name: List files in the repository
       run: |
           ls -lharts ${{ github.workspace }}/artifact
@@ -62,7 +62,7 @@ jobs:
       with:
           appname: '${{ secrets.VERACODE_APP_NAME }}'
           createprofile: false
-          filepath: '${{ github.workspace }}/artifact/'
+          filepath: '${{ github.workspace }}/artifact/*.zip'
           vid: '${{ secrets.VERACODE_API_ID }}'
           vkey: '${{ secrets.VERACODE_API_KEY }}'
           deleteincompletescan: 2
