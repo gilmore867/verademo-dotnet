@@ -41,7 +41,7 @@ jobs:
       - name: Upload artifact for Security Steps
         uses: actions/upload-artifact@v4
         with:
-          name: VeraDemoNet App
+          name: VeraDemoNet.zip
           path: ${{ github.workspace }}\artifact\VeraDemoNet.zip
       
   security:
@@ -62,7 +62,7 @@ jobs:
       with:
           appname: '${{ secrets.VERACODE_APP_NAME }}'
           createprofile: false
-          filepath: '${{ github.workspace }}/artifact/VeraDemoNet.zip'
+          filepath: '${{ github.workspace }}/artifact/'
           vid: '${{ secrets.VERACODE_API_ID }}'
           vkey: '${{ secrets.VERACODE_API_KEY }}'
           deleteincompletescan: 2
