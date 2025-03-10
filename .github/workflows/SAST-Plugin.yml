@@ -48,11 +48,11 @@ jobs:
       with:
         path: '${{ github.workspace }}/artifact'
     - name: Veracode Upload And Scan
-      uses: veracode/veracode-uploadandscan-action@0.2.6
+      uses: veracode/veracode-uploadandscan-action@0.2.1
       with:
           appname: '${{ secrets.VERACODE_APP_NAME }}'
           createprofile: false
-          filepath: '../verademo-dotnet/verademo-dotnet/artifact/VeraDemoNet.zip'
+          filepath: '../workspace/artifact/VeraDemoNet.zip'
           vid: '${{ secrets.VERACODE_API_ID }}'
           vkey: '${{ secrets.VERACODE_API_KEY }}'
           deleteincompletescan: 2
