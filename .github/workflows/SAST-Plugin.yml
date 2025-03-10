@@ -52,13 +52,13 @@ jobs:
       with:
           appname: '${{ secrets.VERACODE_APP_NAME }}'
           createprofile: false
-          filepath: '../workspace/artifact/'
+          filepath: '../workspace/artifact/*.zip'
           vid: '${{ secrets.VERACODE_API_ID }}'
           vkey: '${{ secrets.VERACODE_API_KEY }}'
 #          createsandbox: 'true'
 #          sandboxname: 'SANDBOXNAME'
 #          scantimeout: 0
 #          exclude: '*.js'
-          include: '*.zip'
+#          include: '*.zip'
 #          criticality: 'VeryHigh'
      
