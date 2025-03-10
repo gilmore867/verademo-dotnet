@@ -59,11 +59,11 @@ jobs:
           ls -lharts ${{ github.workspace }}/artifact | tee files.txt
           cat files.txt
     - name: Veracode Upload And Scan
-      uses: veracode/veracode-uploadandscan-action@0.2.6
+      uses: veracode/veracode-uploadandscan-action@0.2.1
       with:
           appname: '${{ secrets.VERACODE_APP_NAME }}'
           createprofile: false
-          inputfilepath: '/home/runner/work/verademo-dotnet/verademo-dotnet/artifact/VeraDemoNet.zip'
+          filepath: '/home/runner/work/verademo-dotnet/verademo-dotnet/artifact/VeraDemoNet.zip'
           vid: '${{ secrets.VERACODE_API_ID }}'
           vkey: '${{ secrets.VERACODE_API_KEY }}'
           deleteincompletescan: 2
