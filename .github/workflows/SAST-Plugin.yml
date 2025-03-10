@@ -41,6 +41,7 @@ jobs:
 
 
   security:
+    needs: build
     runs-on: ubuntu-latest
     steps:
     - name: Check out main branch
