@@ -1,5 +1,11 @@
 name: Veracode-SAST
 'on':
+  workflow_dispatch:
+    inputs:
+      environment:
+        description: 'Choose an environment'
+        required: true
+        default: 'production'
   push:
     branches:
       - master
