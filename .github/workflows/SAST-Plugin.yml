@@ -50,12 +50,10 @@ jobs:
     steps:
     - name: Check out main branch
       uses: actions/checkout@v4
-      with:
-        path: '${{ github.workspace }}/artifact'
     - name: Download Artifact from Previous Job
       uses: actions/download-artifact@v4
       with:
-        path: '${{ github.workspace }}/artifact'
+        path: '${{ github.workspace }}/artifact/VeraDemoNet.zip'
     - name: List files in the repository
       run: |
           ls -lharts ${{ github.workspace }}/artifact
