@@ -47,6 +47,9 @@ jobs:
       uses: actions/checkout@v2
       with:
         path: '${{ github.workspace }}/artifact'
+    - name: List files in the repository
+      run: |
+          ls -lharts ${{ github.workspace }}
     - name: Veracode Upload And Scan
       uses: veracode/veracode-uploadandscan-action@0.2.1
       with:
