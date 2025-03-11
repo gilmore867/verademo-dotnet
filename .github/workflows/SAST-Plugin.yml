@@ -39,7 +39,7 @@ jobs:
           copy VeraDemoNet.zip ${{ github.workspace }}\artifact
           dir ${{ github.workspace }}\artifact
       - name: Upload artifact for Security Steps
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v4 # Copy files from repository to docker container so the next uploadandscan action can access them.
         with:
           name: VeraDemoNet.zip
           path: ${{ github.workspace }}\artifact\VeraDemoNet.zip
@@ -48,8 +48,9 @@ jobs:
     needs: build
     runs-on: ubuntu-latest
     steps:
+    # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
     - name: Check out main branch
-      uses: actions/checkout@v4
+      uses: actions/checkout@v4 
     - name: Download Artifact from Previous Job
       uses: actions/download-artifact@v4
       with:
