@@ -60,7 +60,7 @@ jobs:
           ls -lharts ${{ github.workspace }}/artifact | tee files.txt
           cat files.txt
     - name: Veracode Upload And Scan
-      uses: veracode/veracode-uploadandscan-action@0.2.5
+      uses: veracode/veracode-uploadandscan-action@master
       with:
           appname: '${{ secrets.VERACODE_APP_NAME }}'
           createprofile: false
