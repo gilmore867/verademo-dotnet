@@ -55,20 +55,19 @@ jobs:
       uses: actions/download-artifact@v4
       with:
         path: '${{ github.workspace }}/artifact'
-    - name: List files in the repository
+    - name: Verify file in the repository
       run: |
-          ls -lharts ${{ github.workspace }}/artifact | tee files.txt
-          cat files.txt
+          ls -la ${{ github.workspace }}/artifact/VeraDemoNet.zip || echo "File does not exist"
     - name: Veracode Upload And Scan
       uses: veracode/veracode-uploadandscan-action@master
       with:
           appname: '${{ secrets.VERACODE_APP_NAME }}'
-          createprofile: false
-          filepath: "VeraDemoNet.zip"
+          createprofile: 'false'
+          filepath: '*.zip'
           vid: '${{ secrets.VERACODE_API_ID }}'
           vkey: '${{ secrets.VERACODE_API_KEY }}'
           deleteincompletescan: 2
-          debug: true
+          debug: 'true'
 #          createsandbox: 'true'
 #          sandboxname: 'SANDBOXNAME'
 #          scantimeout: 0
