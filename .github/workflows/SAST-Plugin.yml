@@ -62,12 +62,12 @@ jobs:
       uses: veracode/veracode-uploadandscan-action@master
       with:
           appname: '${{ secrets.VERACODE_APP_NAME }}'
-          createprofile: 'false'
-          filepath: '*.zip'
+          createprofile: false
+          filepath: ${{ github.workspace }}/artifact/VeraDemoNet.zip
           vid: '${{ secrets.VERACODE_API_ID }}'
           vkey: '${{ secrets.VERACODE_API_KEY }}'
           deleteincompletescan: 2
-          debug: 'true'
+          debug: true
 #          createsandbox: 'true'
 #          sandboxname: 'SANDBOXNAME'
 #          scantimeout: 0
